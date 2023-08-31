@@ -15,7 +15,7 @@ import ApiService from "./ApiService.js";
         api.addTask(data);
     });
 
-    async function getContactsIds(limit){
+    async function getContactsIds(limit = 25){
         let page = 1;
         let ids = [];
         while(true){
