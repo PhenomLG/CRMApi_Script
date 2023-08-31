@@ -15,11 +15,11 @@ import ApiService from "./ApiService.js";
         api.addTask(data);
     });
 
-    async function getContactsIds(){
+    async function getContactsIds(limit){
         let page = 1;
         let ids = [];
         while(true){
-            const contacts = await api.getCategory('contacts', { limit: 25, with: 'leads', page });
+            const contacts = await api.getCategory('contacts', { limit, with: 'leads', page });
 
             if(contacts.length === 0)
                 break;
